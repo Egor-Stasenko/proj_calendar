@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="sidebar">
+        <div class="side_settings">
+            <div class="background_img"></div>
+            <div class="side_set_cont">
+                <div class="anim_velosity">
+                    <span>Скорость анимаций</span>
+                    <input type="text" value="100">
+                    <span>%</span>
+                </div>
+                <div>
+                    <span>Фон</span>
+                    <input type="color" value="#2b0049">
+                </div>
+                <div>
+                    <span>Фон</span>
+                    <input type="color" value="#2b0049">    
+                </div>
+                <div>
+                    <span>Фон</span>
+                    <input type="color" value="#2b0049">
+                </div>
+                <div>
+                    <span>Текст названия</span>
+                    <input type="color" value="#2b0049">
+                </div>
+                <div>
+                    <span>Текст названия</span>
+                    <input type="color" value="#2b0049">
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+<style>
+:root{
+    --bg-color: rgb(43, 0, 73);
+}
+body{
+    background-color: var(--bg-color);
+}
+
+.sidebar{
+    position: fixed;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 15%;
+    height: 100%;
+}
+
+.side_set_cont{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+input[type="text"]{
+    width: 30px;
+}
+
+.side_set_cont div:not(.anim_velosity){
+    display: flex;
+    justify-content: space-between;
+}
+input[type="color"] {
+	-webkit-appearance: none;
+    border: none;
+    padding: 0;
+    margin: 2px;
+}
+input[type="color"]::-webkit-color-swatch-wrapper {
+	padding: 0;
+}
+input[type="color"]::-webkit-color-swatch {
+    border: none;
+}
+
+.side_settings{
+    position: fixed;
+    top: 132px;
+    left: 10px;
+    width: 193px;
+    height: 500px;
+    background-color: darkgoldenrod;
+}
+.side_settings .background_img{
+    width: inherit;
+    height: 20px;
+    background-color: var(--bg-color);
+    background-image: url(img/zigzag.png);
+    background-repeat: repeat-x;
+    background-position: bottom;
+    -webkit-transform:rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+</style>
+
+</html>

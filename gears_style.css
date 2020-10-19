@@ -1,0 +1,48 @@
+.back_qube{
+    background-color: coral;
+    width: 200px;
+    height: 30px;
+    position: fixed;
+    left: -5px;
+    top: 82px;
+}
+
+.gears{
+    position: fixed;
+}
+.gears img{
+    position: fixed;
+}
+
+.pr_gear{
+    width: 50px;
+    top: 72px;
+    left: 140px;
+}
+.gears img:nth-of-type(1){
+    width: 45px;
+    top: 60px;
+    left: -10px;
+}
+.gears img:nth-of-type(2){
+    width: 37px;
+    left: 24px;
+    top: 68px;
+    -webkit-transform:rotate(-7deg);
+    -moz-transform: rotate(-7deg);
+    -ms-transform: rotate(-7deg);
+    -o-transform: rotate(-7deg);
+    transform: rotate(-7deg);
+    animation-name: gear2_rotate;
+}
+.gears img:nth-of-type(3){
+    width: 44px;
+    left: 19px;
+    top: 94px;
+    -webkit-transform:rotate(-10deg);
+    -moz-transform: rotate(-10deg);
+    -ms-transform: rotate(-10deg);
+    -o-transform: rotate(-10deg);
+    transform: rotate(-10deg);
+    animation-name: gear3_rotate;
+}
