@@ -12,51 +12,6 @@
 
 <body>
     
-    <div class="sidebar">
-        <div class="gears">
-            <div class="back_qube"></div>
-            <img src="img/gear2.png" alt="gear">
-            <img src="img/gear2.png" alt="gear">
-            <img src="img/gear2.png" alt="gear">
-            <img class="pr_gear" src="img/the_pretty_gear.svg.png" alt="the_pretty_gear">
-        </div>
-        <div class="side_settings">
-            <div class="background_img"></div>
-            <div class="side_set_cont">
-                <div class="anim_velosity">
-                    <span>Скорость анимаций</span>
-                    <input type="text" value="100">
-                    <span>%</span>
-                </div>
-                <div>
-                    <span>Фон</span>
-                    <div class="input-cercle c_1"></div>
-                    <input type="color" value="#2b0049">
-                </div>
-                <div>
-                    <span>Фон</span>
-                    <div class="input-cercle c_2"></div>
-                    <input type="color" value="#2b0049">    
-                </div>
-                <div>
-                    <span>Фон</span>
-                    <div class="input-cercle c_3"></div>
-                    <input type="color" value="#2b0049">
-                </div>
-                <div>
-                    <span>Текст названия</span>
-                    <div class="input-cercle c_4"></div>
-                    <input type="color" value="#2b0049">
-                </div>
-                <div>
-                    <span>Текст названия</span>
-                    <div class="input-cercle c_5"></div>
-                    <input type="color" value="#2b0049">
-                </div>
-            </div>
-        </div>
-    </div>
-
     <div class="info">
         <div>
             <p class="name underlined underlined--gradient">Название</p>
@@ -113,7 +68,52 @@
         </div>
     </div>
 
-    <script></script>
+    <div class="sidebar">
+        <div class="gears">
+            <div class="back_qube"></div>
+            <img src="img/gear2.png" alt="gear">
+            <img src="img/gear2.png" alt="gear">
+            <img src="img/gear2.png" alt="gear">
+            <img class="pr_gear" src="img/the_pretty_gear.svg.png" alt="the_pretty_gear">
+        </div>
+        <div class="side_settings">
+            <div class="background_img"></div>
+            <div class="side_set_cont">
+                <div class="anim_velosity">
+                    <span>Скорость анимаций</span>
+                    <input type="text" value="100">
+                    <span>%</span>
+                </div>
+                <div>
+                    <span>Фон</span>
+                    <input class="input_color i_1" type="color" value="#2b0049">
+                    <div class="input-cercle c_1" onclick="onInput_cercleClick(1)"></div>
+                </div>
+                <div>
+                    <span>Фон</span>
+                    <input class="input_color i_2" type="color" value="#2b0049">    
+                    <div class="input-cercle c_2" onclick="onInput_cercleClick(2)"></div>
+                </div>
+                <div>
+                    <span>Фон</span>
+                    <input class="input_color i_3" type="color" value="#2b0049">
+                    <div class="input-cercle c_3" onclick="onInput_cercleClick(3)"></div>
+                </div>
+                <div>
+                    <span>Текст названия</span>
+                    <input class="input_color i_4" type="color" value="#2b0049">
+                    <div class="input-cercle c_4" onclick="onInput_cercleClick(4)"></div>
+                </div>
+                <div>
+                    <span>Текст названия</span>
+                    <input class="input_color i_5" type="color" value="#2b0049">
+                    <div class="input-cercle c_5" onclick="onInput_cercleClick(5)"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 
 </html>

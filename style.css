@@ -39,6 +39,11 @@ input[type="color"] {
     border: none;
     padding: 0;
     margin: 2px;
+    width: 35px;
+    height: 37px;
+    position: absolute;
+    right: 5px;
+    opacity: 0;
 }
 input[type="color"]::-webkit-color-swatch-wrapper {
 	padding: 0;
@@ -49,25 +54,46 @@ input[type="color"]::-webkit-color-swatch {
 .input-cercle{
     position: relative;
     top: -4px;
+    right: 10px;
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    background-color: black;
+    /* border-style: solid;
+    border-width: 2px;
+    border-color: grey; */
+    box-shadow: 1px -1px 10px 3px rgba(0, 0, 0, 0.699);
+
 }
 .c_1{
-    left: 80px;
+    background-color:  darkgoldenrod;
 }
 .c_2{
-    left: 80px;
+    background-color:  black;
 }
 .c_3{
-    left: 80px;
+    background-color:  white;
 }
 .c_4{
-    left: 42px;
+    background-color:  blueviolet;
 }
 .c_5{
-    left: 42px;
+    background-color:  aqua;
+}
+
+.i_1{
+    bottom: 345px; /* step = 85px */
+}
+.i_2{
+    bottom: 260px;
+}
+.i_3{
+    bottom: 175px;
+}
+.i_4{
+    bottom: 90px;
+}
+.i_5{
+    bottom: 5px;
 }
 
 .side_settings{
@@ -105,7 +131,7 @@ input[type="color"]::-webkit-color-swatch {
         left: -145px;
     }
     100% {
-        left: 0px;
+        left: 5px;
     }
 }
 
