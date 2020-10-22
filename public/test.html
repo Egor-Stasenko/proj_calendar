@@ -6,11 +6,12 @@
 </head>
 <body>
 
-    <div class="settingsFile">
-        <input type="file" value="http://127.0.0.1:5500/settings.txt"> <!-- style="display: none;" -->
-    </div>
+    <p id="hex"></p>
+    <div id="div"></div>
+    <form>
+      <input type="color" value="" id="favcolor">
+    </form> 
 
-    <script src="script.js"></script>
 </body>
 
 <style>
@@ -21,11 +22,24 @@ body{
     background-color: var(--bg-color);
 }
 
+div{
+    width: 100px;
+    height: 100px;
+    background-color: aqua;
+}
 
 </style>
 
 <script>
+
+    var theInput = document.getElementById("favcolor");
+    var theColor = theInput.value;
+    theInput.addEventListener("input", function() {
     
+    document.getElementById("hex").innerHTML = theInput.value;
+    document.getElementById("div").style.backgroundColor = theInput.value;
+    }, false);
+
 </script>
 
 </html>
