@@ -6,17 +6,12 @@
 </head>
 <body>
 
-    <!-- <input class="" type="checkbox" value="">
+    <input class="zoomCheck" type="checkbox" value="">
 
-    <svg class="checkbox_bg_svg" width="110px" height="45px" viewbox="0 0 110 43.76">
-        <path d="M88.256 43.76   c12.188 0, 21.88 9.796, 21.88 21.88   S100.247,0,88.256,0   c-15.745,0-20.67,12.281-33.257,12.281,   S38.16,0,21.731,0   C9.622,0-0.149,9.796-0.149,21.88   s9.672,21.88,21.88,21.88   c17.519,0,20.67-13.384,33.263-13.384,S72.784,43.76,88.256,43.76z"></path>
-    </svg> -->
-    <svg class="checkbox_value_1" width="500px" height="500px" viewbox="0 0 506 506"><!-- позиция1 - круг -->
-        <path d="M3 253   c0 -125  125 -250  250 -250   c125 0  250 125  250 250   c0 125  -125 250  -250 250   c-125 0  -250 -125  -250 -250"></path>
-    </svg>
-    <svg class="checkbox_value_2" width="500px" height="500px" viewbox="0 0 506 506"><!-- позиция2 - лепёшка -->
-        <path d="M3 253   c0 -125  125 -250  250 -250   c125 0  250 125  250 250   c0 125  -125 250  -250 250   c-125 0  -250 -125  -250 -250"></path>
-    </svg>
+    <div onclick="abv_click()">
+        <img class="checkLever" src="img/lever+.png" alt="lever">
+        <img class="lever_footprint" src="img/lever_footprint+.png" alt="lever_footprint">
+    </div>
 
 </body>
 
@@ -28,29 +23,28 @@ body{
     background-color: var(--bg-color);
 }
 
-svg{
-    background-color: aqua;
-    fill: #aaa;
+img{
+    width: 100px;
+    position: absolute;
 }
-/* .checkbox_bg_svg{
-    width: 60px;
-} */
-.checkbox_value_1{
-    width: 300px;
-    height: auto;
-    stroke: black;
-    fill: black;
+.elem_reverse{
+    transform: matrix(-1, 0, 0, 1, 0, 0);
 }
-.checkbox_value_2{
-    width: 500px;
-    height: auto;
-    stroke: black;
-    fill: transparent;
-}
+
 
 </style>
 
 <script>
+
+    abv_click = function(){
+        let checkBox = document.getElementsByClassName("zoomCheck")[0];
+        let lever = document.getElementsByClassName("checkLever")[0];
+        let lever_footprint = document.getElementsByClassName("lever_footprint")[0];
+
+        checkBox.click();
+        lever.classList.toggle("elem_reverse");
+        lever_footprint.classList.toggle("elem_reverse");
+    };
 
 </script>
 
