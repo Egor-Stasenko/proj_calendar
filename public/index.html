@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="gears_rotate_animation.css">
     <link rel="stylesheet" href="text_comming_animation.css">
     <link rel="stylesheet" href="gears_style.css">
+    <link rel="stylesheet" href="checker-lever.css">
 </head>
 
 <body>
@@ -107,13 +108,28 @@
                 </div>
                 <div>
                     <span>Сохранять zoom календаря</span>
-                    <input class="" type="checkbox" value="">
+                    <div class="my_lever_checkbox_container">
+                        <div class="my_lever_checkbox" onclick="zoomCheckClick()">
+                            <input class="zoomCheck_false my_disable" type="checkbox" value="">
+                            <input class="zoomCheck_true my_disable" type="checkbox" value="">
+                    
+                            <img class="lever_footprint" src="img/lever_footprint+.png" alt="lever_footprint">
+                            <div class="container_gradient lever_footprint_gradient lever_footprint_gradient_anim_right anim_of">
+                                <div class="gradient"></div>
+                            </div>
+                            <img class="checkLever" src="img/lever++.png" alt="lever">
+                            <img class="greenLight" src="img/lever_light_green.png" alt="greenLight">
+                            <img class="redLight my_disable" src="img/lever_light_red.png" alt="redLight">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
     <script src="script.js"></script>
+    <script src="checker-lever.js"></script>
+
     <script>
         document.write('<script src="http://'+(location.host || 'localhost').split(':')[0]+':35729/livereload.js?snipver=1"></'+'script>')
     </script>

@@ -2,6 +2,17 @@
     --bg-color: rgb(43, 0, 73);
 }
 
+@font-face { 
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 400;
+    src: local("Open Sans Regular"), local("OpenSans-Regular"),
+    url("fonts/open-sans-v17-latin_cyrillic-regular.woff2")
+    format("woff2"),
+    url("fonts/open-sans-v17-latin_cyrillic-regular.woff")
+    format("woff");
+} 
+
 body{
     background-color: var(--bg-color);
     display: flex;
@@ -9,6 +20,10 @@ body{
     min-height: 100vh;
     margin: 0;
     padding: 8px;
+
+    font-family: -apple-system, BlinkMacSystemFont, Open Sans, sans-serif;
+    scrollbar-color: #EFEFEF #DBE0E4;
+    scrollbar-width: thin!important;
 }
 
 .sidebar{
@@ -98,7 +113,7 @@ input[type="color"]::-webkit-color-swatch {
 
 .side_settings{
     position: fixed;
-    top: 132px;
+    top: 135px;
     left: -145px;
     width: 193px;
     height: 500px;
@@ -148,6 +163,15 @@ input[type="color"]::-webkit-color-swatch {
 .discr{
     width: 310px;
     color: aquamarine;
+    max-width: 450px;
+}
+.info div p{
+    border-style: solid;
+    border-width: 2px;
+    border-color: tomato;
+    border-top: none;
+    border-left: none;
+    border-right: none;
 }
 
 .underlined {
@@ -168,17 +192,7 @@ input[type="color"]::-webkit-color-swatch {
     background-size: 100% 100%;
 }
 
-.info div p{
-    border-style: solid;
-    border-width: 2px;
-    border-color: tomato;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-}
-.discr{
-    max-width: 450px;
-}
+
 .cal_header{
     background-color: aqua;
     display: flex;

@@ -6,12 +6,20 @@
 </head>
 <body>
 
-    <input class="zoomCheck" type="checkbox" value="">
-
-    <div onclick="abv_click()">
-        <img class="checkLever" src="img/lever+.png" alt="lever">
-        <img class="lever_footprint" src="img/lever_footprint+.png" alt="lever_footprint">
+    <div class="info">
+        <div>
+            <p class="name underlined underlined--gradient">Название</p>
+            <p class="discr underlined underlined--thick">
+                <span>описание описание описание описание опис</span>
+                <span>Описание описание описание описание опис</span>
+                <span>описание описание описание описание опис</span>
+            </p>
+        </div>
     </div>
+
+    <svg class="testCicle_container" width="300" height="300" viewBox="0 0 500 500">
+        <path class="st0" fill="red" d="M236,76.01 V273 H38.01 c0,0.17-0.01,0.33-0.01,0.5 C38,382.58,126.42,471,235.5,471 S433,382.58,433,273.5 C433,164.59,344.85,76.28,236,76.01 z"/>
+    </svg>
 
 </body>
 
@@ -19,33 +27,74 @@
 :root{
     --bg-color: rgb(43, 0, 73);
 }
+
+@font-face { 
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 400;
+    src: local("Open Sans Regular"), local("OpenSans-Regular"),
+    url("fonts/open-sans-v17-latin_cyrillic-regular.woff2")
+    format("woff2"),
+    url("fonts/open-sans-v17-latin_cyrillic-regular.woff")
+    format("woff");
+}
+
+svg{
+    animation: svg_circle_anim 2s linear 0s 1 normal forwards;
+}
+
+@keyframes svg_circle_anim{
+    0%{
+        d: path('M236,76.01 V273 H38.01 c0,0.17-0.01,0.33-0.01,0.5 C38,382.58,126.42,471,235.5,471 S433,382.58,433,273.5 C433,164.59,344.85,76.28,236,76.01 z') !important;
+    }
+    50%{
+        d: path('M236,274v-1H38.01c0,0.17-0.01,0.33-0.01,0.5C38,382.58,126.42,471,235.5,471c108.91,0,197.22-88.15,197.49-197H236z') !important;
+    }
+    100%{
+        d: path('M236,273H38.01c0,0.17-0.01,0.33-0.01,0.5C38,382.58,126.42,471,235.5,471c0.17,0,0.33-0.01,0.5-0.01V273z') !important;
+    }
+}
+
+
 body{
     background-color: var(--bg-color);
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 8px;
+    overflow: hidden;
+    box-sizing: border-box;
+
+    font-family: -apple-system, BlinkMacSystemFont, Open Sans, sans-serif;
 }
 
-img{
-    width: 100px;
-    position: absolute;
+.info{
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
 }
-.elem_reverse{
-    transform: matrix(-1, 0, 0, 1, 0, 0);
+.name{
+    width: min-content;
+    color: rgb(51, 255, 0);
 }
-
+.discr{
+    width: 310px;
+    color: aquamarine;
+    max-width: 450px;
+}
+.info div p{
+    border-style: solid;
+    border-width: 2px;
+    border-color: tomato;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
 
 </style>
 
-<script>
-
-    abv_click = function(){
-        let checkBox = document.getElementsByClassName("zoomCheck")[0];
-        let lever = document.getElementsByClassName("checkLever")[0];
-        let lever_footprint = document.getElementsByClassName("lever_footprint")[0];
-
-        checkBox.click();
-        lever.classList.toggle("elem_reverse");
-        lever_footprint.classList.toggle("elem_reverse");
-    };
-
+<script src="">
+    
 </script>
 
 </html>

@@ -26,8 +26,9 @@
 }
 .gears img:nth-of-type(2){
     width: 37px;
-    left: 24px;
-    top: 68px;
+    height: auto;
+    left: 25px;
+    top: 70px;
     -webkit-transform:rotate(-7deg);
     -moz-transform: rotate(-7deg);
     -ms-transform: rotate(-7deg);
@@ -37,8 +38,9 @@
 }
 .gears img:nth-of-type(3){
     width: 44px;
-    left: 19px;
-    top: 94px;
+    height: auto;
+    left: 20px;
+    top: 96px;
     -webkit-transform:rotate(-10deg);
     -moz-transform: rotate(-10deg);
     -ms-transform: rotate(-10deg);
