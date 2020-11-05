@@ -5,21 +5,13 @@
     <title>Document</title>
 </head>
 <body>
-
-    <div class="info">
-        <div>
-            <p class="name underlined underlined--gradient">Название</p>
-            <p class="discr underlined underlined--thick">
-                <span>описание описание описание описание опис</span>
-                <span>Описание описание описание описание опис</span>
-                <span>описание описание описание описание опис</span>
-            </p>
-        </div>
+    
+    <input class="check_zoom_calendar" type="checkbox">
+    <div class="my_svg_anim back_color_red" onclick="button_svg_anim_ckick()">
+        <svg class="my_svg_anim_svg" width="500px" height="500px" viewBox="0 0 500 500">
+			<path class="my_svg_anim_path" d=""/>
+        </svg>
     </div>
-
-    <svg class="testCicle_container" width="300" height="300" viewBox="0 0 500 500">
-        <path class="st0" fill="red" d="M236,76.01 V273 H38.01 c0,0.17-0.01,0.33-0.01,0.5 C38,382.58,126.42,471,235.5,471 S433,382.58,433,273.5 C433,164.59,344.85,76.28,236,76.01 z"/>
-    </svg>
 
 </body>
 
@@ -32,29 +24,10 @@
     font-family: "Open Sans";
     font-style: normal;
     font-weight: 400;
-    src: local("Open Sans Regular"), local("OpenSans-Regular"),
-    url("fonts/open-sans-v17-latin_cyrillic-regular.woff2")
-    format("woff2"),
-    url("fonts/open-sans-v17-latin_cyrillic-regular.woff")
-    format("woff");
+    src: local("Open Sans Regular"), local("OpenSans-Regular"), 
+         url("fonts/open-sans-v17-latin_cyrillic-regular.woff2") format("woff2"),
+         url("fonts/open-sans-v17-latin_cyrillic-regular.woff") format("woff");
 }
-
-svg{
-    animation: svg_circle_anim 2s linear 0s 1 normal forwards;
-}
-
-@keyframes svg_circle_anim{
-    0%{
-        d: path('M236,76.01 V273 H38.01 c0,0.17-0.01,0.33-0.01,0.5 C38,382.58,126.42,471,235.5,471 S433,382.58,433,273.5 C433,164.59,344.85,76.28,236,76.01 z') !important;
-    }
-    50%{
-        d: path('M236,274v-1H38.01c0,0.17-0.01,0.33-0.01,0.5C38,382.58,126.42,471,235.5,471c108.91,0,197.22-88.15,197.49-197H236z') !important;
-    }
-    100%{
-        d: path('M236,273H38.01c0,0.17-0.01,0.33-0.01,0.5C38,382.58,126.42,471,235.5,471c0.17,0,0.33-0.01,0.5-0.01V273z') !important;
-    }
-}
-
 
 body{
     background-color: var(--bg-color);
@@ -68,33 +41,72 @@ body{
     font-family: -apple-system, BlinkMacSystemFont, Open Sans, sans-serif;
 }
 
-.info{
-    flex-grow: 1;
+.my_svg_anim > svg{
+    width: 30px;
+    height: auto;
+}
+.my_svg_anim{
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
-.name{
-    width: min-content;
-    color: rgb(51, 255, 0);
+.back_color_red{
+    background-color: red;
 }
-.discr{
-    width: 310px;
-    color: aquamarine;
-    max-width: 450px;
+.back_color_green{
+    background-color: green;
 }
-.info div p{
-    border-style: solid;
-    border-width: 2px;
-    border-color: tomato;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-}
-
 </style>
 
-<script src="">
+<script src="check_frames_arr.js"></script>
+<script>
+    let now_i = 119;
+    let forward = false;
+
+    svg_checkmark_animate = function(now_i, forvard){
+        let i = now_i;
+
+        let iPlus = -1;
+        let stopi = 0;
+        if(forvard){
+            iPlus = 1;
+            stopi = 120;
+        };
+
+        let delay = 0.01 * 1000 / 120;
+
+        var timerID = setInterval( ()=>{ let svg_svg = document.querySelectorAll('.my_svg_anim > svg')[0]; svg_svg.outerHTML = svg_animation_frames[i]; i+=iPlus; if (i == stopi) { clearInterval(timerID)}}, delay); 
+    };
+
     
+    let this_svg = document.querySelectorAll('.my_svg_anim > svg')[0];
+    if(!forward){
+        this_svg.outerHTML = svg_animation_frames[0];
+    }else{
+        this_svg.outerHTML = svg_animation_frames[119];
+    };
+
+    let anim_svg_div = document.getElementsByClassName("my_svg_anim")[0];
+    let check_zoom_calendar = document.getElementsByClassName("check_zoom_calendar")[0];
+    button_svg_anim_ckick = function(){
+        forward = !forward;
+        if(forward){
+            now_i = 0;
+        }else{
+            now_i = 119;
+        };
+        svg_checkmark_animate(now_i, forward);
+        
+        anim_svg_div.classList.toggle("back_color_green");
+        anim_svg_div.classList.toggle("back_color_red");
+
+        check_zoom_calendar.click();
+    }
+
 </script>
+
 
 </html>

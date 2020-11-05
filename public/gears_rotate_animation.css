@@ -1,38 +1,8 @@
-.gears img{
-    animation-name: gear_rotate;
-    animation-duration: 2.5s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: normal;
-    animation-play-state: running;
-    animation-delay: 0s;
-    animation-fill-mode: both;
-}
-
-@keyframes gear_rotate{
-    100%{
-        -webkit-transform:rotate(-360deg);
-        -moz-transform: rotate(-360deg);
-        -ms-transform: rotate(-360deg);
-        -o-transform: rotate(-360deg);
-        transform: rotate(-360deg);
-    }
-}
-@keyframes gear2_rotate{
-    100%{
-        -webkit-transform:rotate(353deg);
-        -moz-transform: rotate(353deg);
-        -ms-transform: rotate(353deg);
-        -o-transform: rotate(353deg);
-        transform: rotate(353deg);
-    }
-}
-@keyframes gear3_rotate{
-    100%{
-        -webkit-transform:rotate(-370deg);
-        -moz-transform: rotate(-370deg);
-        -ms-transform: rotate(-370deg);
-        -o-transform: rotate(-370deg);
-        transform: rotate(-370deg);
-    }
+.pr_gear:hover{
+    -webkit-transform:rotate(-360deg);
+    -moz-transform: rotate(-360deg);
+    -ms-transform: rotate(-360deg);
+    -o-transform: rotate(-360deg);
+    transform: rotate(-360deg);
+    transition-duration: 0.5s;
 }

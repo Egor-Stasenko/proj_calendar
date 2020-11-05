@@ -27,38 +27,91 @@ body{
 }
 
 .sidebar{
-    position: fixed;
-    margin-top: auto;
-    margin-bottom: auto;
-    width: 15%;
-    height: 100%;
+    color: rgb(110, 109, 0);
+    font-weight: bolder;
 }
 
-.side_set_cont{
-    height: 100%;
+.side_settings_content_container{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(52, 49, 73, 0.582);
+
+    display: flex;
+    justify-content: center;
+}
+.side_settings_content{
+    height: 100vh;
+    width: 90%;
+    background-color: rgba(52, 49, 73, 0.849);
+}
+.settings_h{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 13%;
+    box-sizing: border-box;
+
+    border-bottom-style: solid;
+    border-bottom-color: rgb(41, 59, 83);
+    border-bottom-width: 10px;
+}
+.settings_h h1{
+    width: min-content;
+    height: min-content;
+    font-size: 3em;
+    margin: 0px;
+}
+.side_settings{
+    height: 87%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
 }
-
-input[type="text"]{
-    width: 30px;
+.side_settings > div{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(28, 74, 158, 0.384);
+    align-items: center;
+    padding: 10px;
 }
+
+.cercle_input_container{
+    width: 30px !important;
+    height: 30px !important;
+}
+
+.sidebar span{
+    width: min-content;
+    height: min-content;
+}
+
+input[type="number"]{
+    width: 45px;
+}
+
 
 .side_set_cont div:not(.anim_velosity){
     display: flex;
     justify-content: space-between;
 }
+
+
+
 input[type="color"] {
 	-webkit-appearance: none;
     border: none;
     padding: 0;
     margin: 2px;
-    width: 35px;
-    height: 37px;
     position: absolute;
-    right: 5px;
     opacity: 0;
+    width: 30px;
+    height: 30px;
+    box-sizing: border-box;
 }
 input[type="color"]::-webkit-color-swatch-wrapper {
 	padding: 0;
@@ -68,16 +121,11 @@ input[type="color"]::-webkit-color-swatch {
 }
 .input-cercle{
     position: relative;
-    top: -4px;
-    right: 10px;
-    width: 30px;
-    height: 30px;
+    top: 0px;
+    right: 0px;
+    width: 30px !important;
+    height: 30px !important;
     border-radius: 50%;
-    /* border-style: solid;
-    border-width: 2px;
-    border-color: grey; */
-    box-shadow: 1px -1px 10px 3px rgba(0, 0, 0, 0.699);
-
 }
 .c_1{
     background-color:  darkgoldenrod;
@@ -95,60 +143,25 @@ input[type="color"]::-webkit-color-swatch {
     background-color:  aqua;
 }
 
-.i_1{
-    bottom: 345px; /* step = 85px */
+.my_svg_anim > svg{
+    width: 30px;
+    height: auto;
 }
-.i_2{
-    bottom: 260px;
+.my_svg_anim{
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.i_3{
-    bottom: 175px;
+.back_color_red{
+    background-color: red;
 }
-.i_4{
-    bottom: 90px;
-}
-.i_5{
-    bottom: 5px;
+.back_color_green{
+    background-color: green;
 }
 
-.side_settings{
-    position: fixed;
-    top: 135px;
-    left: -145px;
-    width: 193px;
-    height: 500px;
-    background-color: darkgoldenrod;
-
-    animation-name: sidebar_anim;
-    animation-duration: 2.87s;
-    animation-timing-function: linear;
-    animation-iteration-count: 1;
-    animation-direction: normal;
-    animation-play-state: running;
-    animation-delay: 0s;
-    animation-fill-mode: both;
-}
-.side_settings .background_img{
-    width: inherit;
-    height: 20px;
-    background-color: var(--bg-color);
-    background-image: url(img/zigzag.png);
-    background-repeat: repeat-x;
-    background-position: bottom;
-    -webkit-transform:rotate(180deg);
-    -moz-transform: rotate(180deg);
-    -ms-transform: rotate(180deg);
-    -o-transform: rotate(180deg);
-    transform: rotate(180deg);
-}
-@keyframes sidebar_anim{
-    0% {
-        left: -145px;
-    }
-    100% {
-        left: 5px;
-    }
-}
 
 
 .info{
@@ -191,6 +204,11 @@ input[type="color"]::-webkit-color-swatch {
 .underlined:hover {
     background-size: 100% 100%;
 }
+
+
+
+
+
 
 
 .cal_header{
@@ -249,4 +267,14 @@ input[type="color"]::-webkit-color-swatch {
     position: relative;
     left: -1px;
     top: 1px;
+}
+
+
+
+
+.elem_reverse{
+    transform: matrix(-1, 0, 0, 1, 0, 0);
+}
+.my_disable{
+    display: none;
 }
