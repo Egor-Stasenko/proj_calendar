@@ -5,106 +5,12 @@
     <title>Document</title>
 </head>
 <body>
-    
-    <input class="check_zoom_calendar" type="checkbox">
-    <div class="my_svg_anim back_color_red" onclick="button_svg_anim_ckick()">
-        <svg class="my_svg_anim_svg" width="500px" height="500px" viewBox="0 0 500 500">
-			<path class="my_svg_anim_path" d=""/>
-        </svg>
-    </div>
 
 </body>
 
-<style>
-:root{
-    --bg-color: rgb(43, 0, 73);
-}
-
-@font-face { 
-    font-family: "Open Sans";
-    font-style: normal;
-    font-weight: 400;
-    src: local("Open Sans Regular"), local("OpenSans-Regular"), 
-         url("fonts/open-sans-v17-latin_cyrillic-regular.woff2") format("woff2"),
-         url("fonts/open-sans-v17-latin_cyrillic-regular.woff") format("woff");
-}
-
-body{
-    background-color: var(--bg-color);
-    width: 100vw;
-    height: 100vh;
-    margin: 0;
-    padding: 8px;
-    overflow: hidden;
-    box-sizing: border-box;
-
-    font-family: -apple-system, BlinkMacSystemFont, Open Sans, sans-serif;
-}
-
-.my_svg_anim > svg{
-    width: 30px;
-    height: auto;
-}
-.my_svg_anim{
-    width: 40px;
-    height: 40px;
-    border-radius: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.back_color_red{
-    background-color: red;
-}
-.back_color_green{
-    background-color: green;
-}
-</style>
-
-<script src="check_frames_arr.js"></script>
 <script>
-    let now_i = 119;
-    let forward = false;
-
-    svg_checkmark_animate = function(now_i, forvard){
-        let i = now_i;
-
-        let iPlus = -1;
-        let stopi = 0;
-        if(forvard){
-            iPlus = 1;
-            stopi = 120;
-        };
-
-        let delay = 0.01 * 1000 / 120;
-
-        var timerID = setInterval( ()=>{ let svg_svg = document.querySelectorAll('.my_svg_anim > svg')[0]; svg_svg.outerHTML = svg_animation_frames[i]; i+=iPlus; if (i == stopi) { clearInterval(timerID)}}, delay); 
-    };
-
     
-    let this_svg = document.querySelectorAll('.my_svg_anim > svg')[0];
-    if(!forward){
-        this_svg.outerHTML = svg_animation_frames[0];
-    }else{
-        this_svg.outerHTML = svg_animation_frames[119];
-    };
-
-    let anim_svg_div = document.getElementsByClassName("my_svg_anim")[0];
-    let check_zoom_calendar = document.getElementsByClassName("check_zoom_calendar")[0];
-    button_svg_anim_ckick = function(){
-        forward = !forward;
-        if(forward){
-            now_i = 0;
-        }else{
-            now_i = 119;
-        };
-        svg_checkmark_animate(now_i, forward);
-        
-        anim_svg_div.classList.toggle("back_color_green");
-        anim_svg_div.classList.toggle("back_color_red");
-
-        check_zoom_calendar.click();
-    }
+    alert(new Date());
 
 </script>
 
