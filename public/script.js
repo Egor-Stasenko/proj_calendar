@@ -13,7 +13,6 @@ for(let i = 0; i < inputs_color.length; i++){
     }, false);
 };
 
-
 let sidebar = document.getElementsByClassName("side_settings_content_container")[0];
 prettyGear_onClick = function(){
     sidebar.classList.toggle("my_disable");
@@ -36,7 +35,6 @@ svg_checkmark_animate = function(now_i, forvard){
 
     var timerID = setInterval( ()=>{ let svg_svg = document.querySelectorAll('.my_svg_anim > svg')[0]; svg_svg.outerHTML = svg_animation_frames[i]; i+=iPlus; if (i == stopi) { clearInterval(timerID)}}, delay); 
 };
-
     
 let this_svg = document.querySelectorAll('.my_svg_anim > svg')[0];
 if(!forward){

@@ -1,0 +1,102 @@
+.info{
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 1px;
+}
+
+.info-card{
+    width: 210px;
+    height: 300px;
+    background-color: rgb(62, 255, 191);
+    box-shadow: 10px 13px 0px 0px rgba(62, 255, 191, 0.63),
+                20px 26px 0px 0px rgba(62, 255, 191, 0.36);
+    transition-duration: 0.5s;
+
+    position: relative;
+    top: 0em;
+    left: auto;
+}
+.info-card:not(:last-of-type){
+    margin-right: 40px;
+}
+.card_anim{
+    animation-name: card_comming_animation;
+    animation-duration: 1.6s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: none;
+    animation-direction: normal;
+}
+.card_anim_reverse{
+    animation-name: card_comming_animation_reverse;
+    animation-duration: 1.6s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: none;
+    animation-direction: normal;
+}
+.info-card:hover{
+    box-shadow: 10px 13px 0px 0px rgba(62, 255, 191, 0.63),
+                10px 13px 0px 0px rgba(62, 255, 191, 0.36);
+    transition-duration: 0.5s;
+}
+.info-card p{
+    margin: 0;
+    padding: 3px;
+    text-align: left;
+}
+
+.name{
+    height: min-content;
+}
+.name p{
+    text-align: center;
+}
+
+.horizontal_line{
+    height: 2%;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+.horizontal_line .line{
+    height: 3px;
+    background-color: rgba(255, 99, 71, 0.61);
+    border-radius: 100%;
+}
+
+.discription{
+    height: min-content;
+}
+
+@keyframes card_comming_animation{
+    0%{
+        top: -51em;
+        box-shadow: 0px 0px 0px 0px rgba(62, 255, 191, 0.63),
+                    0px 0px 0px 0px rgba(62, 255, 191, 0.36);
+    }
+    62.5%{
+        box-shadow: 0px 0px 0px 0px rgba(62, 255, 191, 0.63),
+                    0px 0px 0px 0px rgba(62, 255, 191, 0.36);
+        top: 0em;
+    }
+    100%{
+        box-shadow: 10px 13px 0px 0px rgba(62, 255, 191, 0.63),
+                    20px 26px 0px 0px rgba(62, 255, 191, 0.36);
+    }
+}
+@keyframes card_comming_animation_reverse{
+    0%{
+        box-shadow: 10px 13px 0px 0px rgba(62, 255, 191, 0.63),
+                    20px 26px 0px 0px rgba(62, 255, 191, 0.36);
+    }
+    37.5%{
+        box-shadow: 0px 0px 0px 0px rgba(62, 255, 191, 0.63),
+                    0px 0px 0px 0px rgba(62, 255, 191, 0.36);
+        top: 0em;
+    }
+    100%{
+        top: -51em;
+        box-shadow: 0px 0px 0px 0px rgba(62, 255, 191, 0.63),
+                    0px 0px 0px 0px rgba(62, 255, 191, 0.36);
+    }
+}

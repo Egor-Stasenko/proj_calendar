@@ -3,27 +3,20 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title>Web Calendar</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="text_comming_animation.css">
     <link rel="stylesheet" href="gears_rotate_animation.css">
     <link rel="stylesheet" href="gears_style.css">
+    <link rel="stylesheet" href="card_style.css">
 </head>
 
 <body>
     <div class="info">
-        <div>
-            <p class="name underlined underlined--gradient">Название</p>
-            <p class="discr underlined underlined--thick">
-                <span>описание описание описание описание опис</span>
-                <span>Описание описание описание описание опис</span>
-                <span>описание описание описание описание опис</span>
-            </p>
-        </div>
     </div>
 
     <div class="calendar">
         <header class="cal_header">
+            <img class="today_button" onclick="today_button_click()" src="img\today_button_ended+.svg" alt="">
             <p class="date">
                 <time datetime="2020-02-12">12-02-2020</time>
             </p>
@@ -31,13 +24,13 @@
 
         <div class="cal_body">
             <div class="switcher">
-                <button class="priv_mon">
+                <button class="priv_mon" onclick="priveous_month()">
                     <svg class="left_arr" width="15" height="20"><polygon points="0,11 15,0 15,20" fill="grey" stroke="grey" stroke-width="2"/></svg>
                 </button>
                 <div class="mon">
                     <span>Месяц</span>
                 </div>
-                <button class="next_mon">
+                <button class="next_mon" onclick="next_month()">
                     <svg class="right_arr" width="15" height="20"><polygon points="15,11 0,0 0,20" fill="grey" stroke="grey" stroke-width="2"/></svg>
                 </button>
             </div>
@@ -56,12 +49,12 @@
             
                     <tr><td><div></div></td></tr>
             
-                    <tr><td><button>00</button></td> <td><button>00</button></td> <td><button>00</button></td> <td><button>00</button></td> <td><button>00</button></td> <td><button>00</button></td> <td><button>00</button></td></tr>
-                    <tr><td><button>00</button></td> <td><button>00</button></td> <td><button>00</button></td> <td><button>00</button></td> <td><button>00</button></td> <td><button>00</button></td> <td><button>00</button></td></tr>
-                    <tr><td><button>00</button></td> <td><button>00</button></td> <td><button>00</button></td> <td><button>00</button></td> <td><button>00</button></td> <td><button>00</button></td> <td><button>00</button></td></tr>
-                    <tr><td><button>00</button></td> <td><button class="active">00</button></td> <td><button>00</button></td> <td><button>00</button></td> <td><button>00</button></td> <td><button>00</button></td> <td><button>00</button></td></tr>
-                    <tr><td><button>00</button></td> <td><button>00</button></td> <td><button>00</button></td> <td><button>00</button></td> <td><button>00</button></td> <td><button>00</button></td> <td><button>00</button></td></tr>
-                    <tr><td><button>00</button></td> <td><button>00</button></td> <td><button>00</button></td> <td><button>00</button></td> <td><button>00</button></td> <td><button>00</button></td> <td><button>00</button></td></tr>
+                    <tr><td><button></button></td> <td><button></button></td> <td><button></button></td> <td><button></button></td> <td><button></button></td> <td><button></button></td> <td><button></button></td></tr>
+                    <tr><td><button></button></td> <td><button></button></td> <td><button></button></td> <td><button></button></td> <td><button></button></td> <td><button></button></td> <td><button></button></td></tr>
+                    <tr><td><button></button></td> <td><button></button></td> <td><button></button></td> <td><button></button></td> <td><button></button></td> <td><button></button></td> <td><button></button></td></tr>
+                    <tr><td><button></button></td> <td><button></button></td> <td><button></button></td> <td><button></button></td> <td><button></button></td> <td><button></button></td> <td><button></button></td></tr>
+                    <tr><td><button></button></td> <td><button></button></td> <td><button></button></td> <td><button></button></td> <td><button></button></td> <td><button></button></td> <td><button></button></td></tr>
+                    <tr><td><button></button></td> <td><button></button></td> <td><button></button></td> <td><button></button></td> <td><button></button></td> <td><button></button></td> <td><button></button></td></tr>
                 </table>
             </div>
         </div>
@@ -77,35 +70,35 @@
                     <div class="anim_velosity">
                         <span>Скорость анимаций</span>
                         <div class="anim_velosity_input_container">
-                            <input type="number" value="100">
+                            <input type="number" value="1">
                             <span>%</span>
                         </div>
                     </div>
                     <div>
                         <span>Фон</span>
                         <div class="cercle_input_container">
-                            <input class="input_color i_1" type="color" value="#2b0049">
+                            <input class="input_color i_1" type="color" value="#2b4900">
                             <div class="input-cercle c_1" onclick="inputCircle_onClick(1)"></div>
                         </div>
                     </div>
                     <div>
                         <span>Фон</span>
                         <div class="cercle_input_container">
-                            <input class="input_color i_2" type="color" value="#2b0049">    
+                            <input class="input_color i_2" type="color" value="#2b4900">    
                             <div class="input-cercle c_2" onclick="inputCircle_onClick(2)"></div>
                         </div>
                     </div>
                     <div>
                         <span>Фон</span>
                         <div class="cercle_input_container">
-                            <input class="input_color i_3" type="color" value="#2b0049">
+                            <input class="input_color i_3" type="color" value="#2b4900">
                             <div class="input-cercle c_3" onclick="inputCircle_onClick(3)"></div>
                         </div>
                     </div>
                     <div>
                         <span>Текст названия</span>
                         <div class="cercle_input_container">
-                            <input class="input_color i_4" type="color" value="#2b0049">
+                            <input class="input_color i_4" type="color" value="#2b4900">
                             <div class="input-cercle c_4" onclick="inputCircle_onClick(4)"></div>
                         </div>
                     </div>
@@ -113,7 +106,7 @@
                         <span>Сохранять zoom календаря</span>
                         <input class="check_zoom_calendar my_disable" type="checkbox">
                         <div class="my_svg_anim back_color_red" onclick="button_svg_anim_ckick()">
-                            <svg class="my_svg_anim_svg" width="500px" height="500px" viewBox="0 0 500 500">
+                            <svg class="my_svg_anim_svg" width="5px" height="5px" viewBox="0 0 5 5">
 			                    <path class="my_svg_anim_path" d=""/>
                             </svg>
                         </div>
@@ -135,5 +128,31 @@
         document.write('<script src="http://'+(location.host || 'localhost').split(':')[0]+':35729/livereload.js?snipver=1"></'+'script>')
     </script>
 </body>
-
+<style>
+    .prs-header2{ 
+        font-weight: 600; 
+        font-size: 18px; 
+        line-height: 22px; 
+    }
+    .al-c{ 
+        align-self: center; 
+    }
+    .notify{ 
+        position: absolute; 
+        display: flex; 
+        justify-content: center; 
+        bottom: 0; 
+        width: 100%;
+        height: 80px;
+        background-color: #3987FF; 
+        z-index: 1000; 
+        transition: opacity 1s ease-out; 
+    } 
+    .notify-text{ 
+        color: #DBE0E4; 
+    } 
+    .warning{ 
+        background-color: #D22D2D; 
+    }
+</style>
 </html>

@@ -1,7 +1,6 @@
 :root{
     --bg-color: rgb(43, 0, 73);
 }
-
 @font-face { 
     font-family: "Open Sans";
     font-style: normal;
@@ -17,9 +16,10 @@ body{
     background-color: var(--bg-color);
     display: flex;
     align-items: center;
-    min-height: 100vh;
+    height: 100vh;
     margin: 0;
     padding: 8px;
+    overflow: hidden;
 
     font-family: -apple-system, BlinkMacSystemFont, Open Sans, sans-serif;
     scrollbar-color: #EFEFEF #DBE0E4;
@@ -35,15 +35,15 @@ body{
     position: fixed;
     top: 0px;
     left: 0px;
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
     background-color: rgba(52, 49, 73, 0.582);
 
     display: flex;
     justify-content: center;
 }
 .side_settings_content{
-    height: 100vh;
+    height: 100%;
     width: 90%;
     background-color: rgba(52, 49, 73, 0.849);
 }
@@ -73,6 +73,7 @@ body{
 .side_settings > div{
     width: 100%;
     height: 100px;
+    box-sizing: border-box;
     display: flex;
     justify-content: space-between;
     background-color: rgba(28, 74, 158, 0.384);
@@ -94,13 +95,10 @@ input[type="number"]{
     width: 45px;
 }
 
-
 .side_set_cont div:not(.anim_velosity){
     display: flex;
     justify-content: space-between;
 }
-
-
 
 input[type="color"] {
 	-webkit-appearance: none;
@@ -162,69 +160,26 @@ input[type="color"]::-webkit-color-swatch {
     background-color: green;
 }
 
-
-
-.info{
-    flex-grow: 1;
-    display: flex;
-    justify-content: center;
-}
-.name{
-    width: min-content;
-    color: rgb(51, 255, 0);
-}
-.discr{
-    width: 310px;
-    color: aquamarine;
-    max-width: 450px;
-}
-.info div p{
-    border-style: solid;
-    border-width: 2px;
-    border-color: tomato;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-}
-
-.underlined {
-    background-position: 0 1.2em;
-    background-size: 0 100%;
-    background-repeat: no-repeat;
-    transition: background.5s;
-}
-.underlined--gradient {
-    background-position: 0 -0.1em;
-    background-image: linear-gradient(to right, yellow 0, lightgreen 100%);
-}
-.underlined--thick {
-    background-position: 0 -0.1em;
-    background-image: linear-gradient(to right, lightgreen 0%, yellow 100%);
-}
-.underlined:hover {
-    background-size: 100% 100%;
-}
-
-
-
-
-
-
-
 .cal_header{
     background-color: aqua;
     display: flex;
-    justify-content: center;
 }
 .week_day{
     font-size: 20px;
     margin-bottom: 0px;
+}
+.today_button{
+    width: 35px;
+    height: 35px;
+    position: absolute;
 }
 .date{
     font-size: 30px;
     padding-top: 10px;
     padding-bottom: 10px;
     margin-top: 0px;
+    margin-left: auto;
+    margin-right: auto;
 }
 .switcher{
     display: flex;
@@ -241,6 +196,7 @@ input[type="color"]::-webkit-color-swatch {
     position: relative;
     top: -30px;
     background-color: yellow;
+    height: 300px;
 }
 .cal_body button{
     width: 30px;
@@ -259,18 +215,28 @@ input[type="color"]::-webkit-color-swatch {
 .days table tr td div{
     height: 4px;
 }
-.days table button.active{
-    background-color: rgb(255, 81, 0);
-    border-radius: 100%;
-}
 .cal_body button svg{
     position: relative;
     left: -1px;
     top: 1px;
 }
-
-
-
+.days table button.disabled{
+    color: gray;
+}
+.days table button.active{
+    border-color: rgb(255, 81, 0);
+    border-radius: 100%;
+    border-style: solid;
+    border-width: 2px;
+}
+.days table button.used{
+    background-color: rgba(106, 157, 253, 0.452);
+    border-radius: 0%;
+}
+.days table button.active.used{
+    background-color: rgb(255, 81, 0);
+    border-radius: 100%;
+}
 
 .elem_reverse{
     transform: matrix(-1, 0, 0, 1, 0, 0);

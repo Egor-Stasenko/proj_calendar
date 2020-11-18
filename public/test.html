@@ -3,16 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
+    
 </head>
+
 <body>
+    
+    
 
 </body>
 
+<style>
+:root{
+    --bg-color: rgb(43, 0, 73);
+}
+@font-face { 
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 400;
+    src: local("Open Sans Regular"), local("OpenSans-Regular"),
+    url("fonts/open-sans-v17-latin_cyrillic-regular.woff2")
+    format("woff2"),
+    url("fonts/open-sans-v17-latin_cyrillic-regular.woff")
+    format("woff");
+} 
+body{
+    background-color: var(--bg-color);
+    min-height: 100vh;
+    margin: 0;
+    padding: 8px;
+
+    font-family: -apple-system, BlinkMacSystemFont, Open Sans, sans-serif;
+    scrollbar-color: #EFEFEF #DBE0E4;
+    scrollbar-width: thin!important;
+
+    display: flex;
+    justify-content: center;
+}
+
+
+
+</style>
 <script>
-    
-    alert(new Date());
+
+    let json = '{"holidays":[{"name": "День разгорма фашистских войск под Сталинградом", "day": 2, "month": 2, "official": true, "holiday": false, "cat": "памятный день", "country": "Россия", "descr": "Официальный с 1995 года. День воинской славы России"}, {"name": "День разгорма фашистских войск под Сталинградом", "day": 2, "month": 2, "official": true, "holiday": false, "cat": "памятный день", "country": "Россия", "descr": "Официальный с 1995 года. День воинской славы России"}]}';
+    let parsedJSON = JSON.parse(json).holidays;
+    console.log(parsedJSON);
 
 </script>
-
-
 </html>
