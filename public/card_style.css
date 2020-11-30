@@ -8,7 +8,9 @@
 
 .info-card{
     width: 210px;
-    height: 300px;
+    min-height: 300px;
+    max-height: 700px;
+    overflow: auto;
     background-color: rgb(62, 255, 191);
     box-shadow: 10px 13px 0px 0px rgba(62, 255, 191, 0.63),
                 20px 26px 0px 0px rgba(62, 255, 191, 0.36);
@@ -17,6 +19,36 @@
     position: relative;
     top: 0em;
     left: auto;
+}
+.card-no-holly{
+    min-height: auto;
+    max-height: auto;
+    width: 400px;
+    height: 50px;
+    
+    font-size: 20pt;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+::-webkit-scrollbar { 
+    width: 0px; 
+} 
+::-webkit-scrollbar-track { 
+    background: rgb(62, 255, 191); 
+    border-radius: 0px; 
+} 
+::-webkit-scrollbar-thumb { 
+    border-radius: 0px; 
+    background:  rgb(62, 255, 191); 
+}
+.scroll-true::after{
+    content: linear-gradient(to top, rgba(62, 255, 191, 1), rgba(62, 255, 191, 0.5));
+    width: 210px;
+    height: 50px;
+    position: relative;
+    top: 0;
+    background: linear-gradient(to top,  rgba(62, 255, 191, 1),  rgba(62, 255, 191, 0.5));
 }
 .info-card:not(:last-of-type){
     margin-right: 40px;

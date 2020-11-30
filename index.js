@@ -46,6 +46,14 @@ app.get("/_api/getHoliday/:year/:month/:day", function (req, res) {
 
   // res.end(req.params["dateParam"]);
 });
+// учётки
+// app.get("/_api/get_settings/:login/:password", function (req, res) { 
+  
+// });
+// app.get("/_api/write_settings/:login/:password/:params", function (req, res) { 
+  
+// });
+// учётки
 app.post('/_api/postSomeData', (req, res, next) => {
   console.log(req.body);
   res.end("ok");
@@ -56,5 +64,3 @@ app.post('/_api/postSomeData', (req, res, next) => {
 app.listen(3000);
 console.log("listening 3000 (http://localhost:3000/)");
 ///запуск
-
-

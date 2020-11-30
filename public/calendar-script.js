@@ -110,6 +110,16 @@ cicle_of_painting_visible_days_of_month = function(){
     if(mon_num == Number(active_Day.split("-")[1]) && year == Number(active_Day.split("-")[2])){
         get_button_by_text(active_Day.split("-")[0]).classList.add("used");
     };
+
+    let i = visible_days_in_this_mon()[0].length + visible_days_in_this_mon()[1].length + visible_days_in_this_mon()[2].length - 3;
+    for(i; i < 42; i++){
+        let col = reforge_nums_for_gdb_func(i+1, 1)[0];
+        let l = reforge_nums_for_gdb_func(i+1, 1)[1];
+        let but = get_day_button(col, l);
+        if(but.textContent == ""){
+            but.classList.add("my_disable");
+        };
+    };
 };
 clear_calendar = function(){
     for(let i = 0; i < 42; i++){
@@ -119,6 +129,7 @@ clear_calendar = function(){
         but.classList.remove("disabled");
         but.classList.remove("active");
         but.classList.remove("used");
+        but.classList.remove("my_disable");
         but.textContent = "";
     };
 };
@@ -150,8 +161,8 @@ create_cards = function(content){
         tout = 2800;
     };
     let t = setTimeout( () => {
-        if(!content){
-            //пустая "праздников нет"
+        if(content.length == 0){
+            info_block.innerHTML += '<div class="info-card card_anim card-no-holly"><p>404 - Празников не найденно(</p></div>';//пустая "праздников нет"
             return;
         };
         for(i = 0; i < content.length; i++){
@@ -176,9 +187,14 @@ create_cards = function(content){
             info_block.innerHTML += '<div class="info-card card_anim"><div class="name"><p> </p></div><div class="horizontal_line"><div class="line"></div></div><div class="discription"><p> </p></div></div>';
             let name_obj = document.querySelector(".info-card:nth-of-type(" + String(Number(i+1)) +") > .name > p");
             let disc_obj = document.querySelector(".info-card:nth-of-type(" + String(Number(i+1)) +") > .discription > p");
+            let now_card = document.querySelector(".info-card:last-of-type");
             
             name_obj.textContent = name;
             disc_obj.textContent = disc;
+
+            if(now_card.scrollHeight > now_card.clientHeight){
+                now_card.classList.add("scroll-true");
+            };
         };
     }, tout);
 };
