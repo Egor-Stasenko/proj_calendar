@@ -64,7 +64,7 @@
                     <h1>Настройки</h1>
                 </div>
                 <div class="side_settings">
-                    <div class="anim_velosity">
+                    <div style="display: none;" class="anim_velosity">
                         <span>Скорость анимаций</span>
                         <div class="anim_velosity_input_container">
                             <input type="number" value="1">
@@ -72,34 +72,41 @@
                         </div>
                     </div>
                     <div>
-                        <span>Фон</span>
+                        <span>Главный фон</span>
                         <div class="cercle_input_container">
                             <input class="input_color i_1" type="color" value="#2b4900">
                             <div class="input-cercle c_1" onclick="inputCircle_onClick(1)"></div>
                         </div>
                     </div>
                     <div>
-                        <span>Фон</span>
+                        <span>Верхний фон календаря</span>
                         <div class="cercle_input_container">
                             <input class="input_color i_2" type="color" value="#2b4900">    
                             <div class="input-cercle c_2" onclick="inputCircle_onClick(2)"></div>
                         </div>
                     </div>
                     <div>
-                        <span>Фон</span>
+                        <span>Нижний фон календаря</span>
                         <div class="cercle_input_container">
                             <input class="input_color i_3" type="color" value="#2b4900">
                             <div class="input-cercle c_3" onclick="inputCircle_onClick(3)"></div>
                         </div>
                     </div>
                     <div>
-                        <span>Текст названия</span>
+                        <span>Верхний текст календаря</span>
                         <div class="cercle_input_container">
                             <input class="input_color i_4" type="color" value="#2b4900">
                             <div class="input-cercle c_4" onclick="inputCircle_onClick(4)"></div>
                         </div>
                     </div>
                     <div>
+                        <span>Нижний текст календаря</span>
+                        <div class="cercle_input_container">
+                            <input class="input_color i_5" type="color" value="#00aa00">
+                            <div class="input-cercle c_5" onclick="inputCircle_onClick(5)"></div>
+                        </div>
+                    </div>
+                    <div style="display: none;">
                         <span>Сохранять zoom календаря</span>
                         <input class="check_zoom_calendar my_disable" type="checkbox">
                         <div class="my_svg_anim back_color_red" onclick="button_svg_anim_ckick()">
@@ -120,6 +127,7 @@
     <script src="check_frames_arr.js"></script>
     <script src="script.js"></script>
     <script src="calendar-script.js"></script>
+    <script src="settings_script.js"></script>
 
     <script>
         document.write('<script src="http://'+(location.host || 'localhost').split(':')[0]+':35729/livereload.js?snipver=1"></'+'script>')
