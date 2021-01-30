@@ -1,4 +1,7 @@
 {
-	"param1": "value1",
-	"param2": "value2"
+    "param1":"#2B0049",
+    "param2":"#00ffff",
+    "param3":"#ffff00",
+    "param4":"#000000",
+    "param5":"#000000"
 }

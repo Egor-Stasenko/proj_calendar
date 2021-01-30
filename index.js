@@ -24,8 +24,8 @@ var lrServer = livereload.createServer();
 lrServer.watch(__dirname+"/public");
 ////////////livereload
 
-//обработки и вообще то что и хотелось
-app.get("/_api/getHoliday/:year/:month/:day", function (req, res) { 
+//обработки
+app.get("/_api/getHoliday/:year/:month/:day", function (req, res){
   /*
   getHolidays(req.params["year"], req.params["month"], req.params["day"]).then((data) => {
     res.end(JSON.stringify({"holidays": data}));
@@ -46,19 +46,37 @@ app.get("/_api/getHoliday/:year/:month/:day", function (req, res) {
 
   // res.end(req.params["dateParam"]);
 });
+app.get("/_api/Settings/Get", function (req, res){
+  (async () => {
+    try {
+      var data = await settings;
+      res.end(JSON.stringify({data}));
+    }
+    catch (e) {
+      console.log(e);
+      res.end("error");
+    }
+  })();
+});
 // учётки
 // app.get("/_api/get_settings/:login/:password", function (req, res) { 
-  
+//  
 // });
 // app.get("/_api/write_settings/:login/:password/:params", function (req, res) { 
-  
+//  
 // });
 // учётки
-app.post('/_api/postSomeData', (req, res, next) => {
-  console.log(req.body);
+app.use(bodyParser.urlencoded({extended: true}));
+app.post('/_api/Settings/Set', (req, res, next) => {
+  let data = req.body;
+  console.log(data);
+  
+  // fs.writeFileSync("settings.json", req.body)
+  
+
   res.end("ok");
 });
-//обработки и вообще то что и хотелось
+//обработки
 
 ///запуск
 app.listen(3000);

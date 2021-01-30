@@ -199,7 +199,7 @@ create_cards = function(content){
     }, tout);
 };
 show_day_info = function(year, month, day){
-    getData('/_api/getHoliday/' + year+"/"+month+"/"+day, (data) => create_cards(JSON.parse(data)), (err) => console.log(err));
+    getData('/_api/getHoliday/' + year + "/" + month + "/" + day, (data) => create_cards(JSON.parse(data)), (err) => console.log(err));
 };
 
 let today_button = document.getElementsByClassName("today_button")[0];
